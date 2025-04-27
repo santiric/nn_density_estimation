@@ -1,0 +1,10 @@
+# Virtual environment
+.venv/
+
+# File temporanei di Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Config locali
+.env
