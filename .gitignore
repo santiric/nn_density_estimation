@@ -8,3 +8,7 @@ __pycache__/
 
 # Config locali
 .env
+
+
+#file
+prova.py

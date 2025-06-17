@@ -96,8 +96,8 @@ class RNADE(nn.Module):
 
         log_prob = torch.stack(log_probs, dim=1).sum(dim=1)
         return log_prob #ogni elemento è il log-likelihood totale per un esempio del batch
-def train_rnade(model, train_data, valid_data, num_epochs=500, batch_size=100,
-                init_lr=0.1, weight_decay=0.0, patience=20):
+def train_rnade(model, train_data, valid_data, num_epochs=500, batch_size=500,
+                init_lr=0.1, weight_decay=0.0, patience=30):
     """
     Addestra il modello RNADE utilizzando SGD sulla negativa log-likelihood.
     Viene applicato il weight decay solo al parametro condiviso W e,
@@ -237,7 +237,7 @@ def grid_search(train_data, valid_data, hidden_units, hyperparams_grid):
         # Crea una nuova istanza del modello per ogni combinazione(c'è un parametro inizializzato qui,devo fare così)
         model = RNADE(input_dim, hidden_units, num_components)
         trained_model = train_rnade(model, train_data, valid_data,
-                                    num_epochs=1000, batch_size=100,
+                                    num_epochs=5000, batch_size=100,
                                     init_lr=init_lr, weight_decay=weight_decay, patience=40)
 
         # Valutazione sul set di validazione
@@ -254,6 +254,9 @@ def grid_search(train_data, valid_data, hidden_units, hyperparams_grid):
         if val_ll > best_val_ll:
             best_val_ll = val_ll
             best_params = {"init_lr": init_lr, "weight_decay": weight_decay, "num_components": num_components}
+
+        print("Migliori iperparametri per ora:", best_params)
+        print("Miglior Val LL per ora:", best_val_ll)
 
     print(f"\nBest hyperparameters: {best_params} with Validation LL: {best_val_ll:.4f}")
     return best_params, best_val_ll
