@@ -1,5 +1,4 @@
-GLOBAL_SEED = 308
-
+GLOBAL_SEED = 1000
 import os
 import math
 import numpy as np
@@ -131,9 +130,11 @@ def worker_init_fn(worker_id):
 def main():
     set_seed(GLOBAL_SEED)
     N = 25000
-    D=5
+    D=20
     sigma = ar1_cor(D, 0.9)
     data = generate_data(N, GLOBAL_SEED, sigma)
+
+    #plot_scatter_matrix(data, save_path='results/training_scatter_matrix_20_A.png')
     
     # Split train/valid/test
     train_data, temp_data = train_test_split(
@@ -194,6 +195,9 @@ def main():
         n_components_list=[1,3,5,7,10,15,20,25,30,35,40],
         random_state=GLOBAL_SEED
     )
+
+    est_gmm = gmm_est(test_data, gmm_model)
+    gmm_rel_L1 = evaluate_rel_L1(est_gmm, true_density)
     
     # --- KDE ---
     set_seed(GLOBAL_SEED)
@@ -320,220 +324,13 @@ def main():
         print(df_results)
 
 
-if __name__ == "__main__":
-    main()
 
-GLOBAL_SEED=608
 
 if __name__ == "__main__":
     main()
 
-GLOBAL_SEED=609
 
-if __name__ == "__main__":
-    main()
 
-GLOBAL_SEED=610
 
-if __name__ == "__main__":
-    main()
 
-GLOBAL_SEED=611
 
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=612
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=613
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=614
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=615
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=616
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=617
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=618
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=619
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=620
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=621
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=622
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=623
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=624
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=625
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=626
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=627
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=628
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=629
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=630
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=631
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=632
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=633
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=634
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=635
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=636
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=637
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=638
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=639
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=640
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=641
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=642
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=643
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=644
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=645
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=646
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=647
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=648
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=649
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED=650
-
-if __name__ == "__main__":
-    main()

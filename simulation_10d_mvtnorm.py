@@ -1,4 +1,4 @@
-GLOBAL_SEED = 4023
+GLOBAL_SEED = 4000
 
 import os
 import math
@@ -131,7 +131,7 @@ def worker_init_fn(worker_id):
 def main():
     set_seed(GLOBAL_SEED)
     N = 25000
-    D=5
+    D=10
     sigma = ar1_cor(D, 0.9)
     data = generate_data(N, GLOBAL_SEED, sigma)
     
@@ -320,10 +320,99 @@ def main():
         print(df_results)
 
 
+
 if __name__ == "__main__":
     main()
 
+GLOBAL_SEED = 4001
+if __name__ == "__main__":
+    main()
 
+GLOBAL_SEED = 4002
+if __name__ == "__main__":
+    main()
+
+GLOBAL_SEED = 4003
+if __name__ == "__main__":
+    main()
+
+GLOBAL_SEED = 4004
+if __name__ == "__main__":
+    main()
+
+GLOBAL_SEED = 4005
+if __name__ == "__main__":
+    main()
+
+GLOBAL_SEED = 4006
+if __name__ == "__main__":
+    main()
+
+GLOBAL_SEED = 4007
+if __name__ == "__main__":
+    main()
+
+GLOBAL_SEED = 4008
+if __name__ == "__main__":
+    main()
+
+GLOBAL_SEED = 4009
+if __name__ == "__main__":
+    main()
+
+GLOBAL_SEED = 4010
+if __name__ == "__main__":
+    main()
+
+GLOBAL_SEED = 4011
+if __name__ == "__main__":
+    main()
+
+GLOBAL_SEED = 4012
+if __name__ == "__main__":
+    main()
+
+GLOBAL_SEED = 4013
+if __name__ == "__main__":
+    main()
+
+GLOBAL_SEED = 4014
+if __name__ == "__main__":
+    main()
+
+GLOBAL_SEED = 4015
+if __name__ == "__main__":
+    main()
+
+GLOBAL_SEED = 4016
+if __name__ == "__main__":
+    main()
+
+GLOBAL_SEED = 4017
+if __name__ == "__main__":
+    main()
+
+GLOBAL_SEED = 4018
+if __name__ == "__main__":
+    main()
+
+GLOBAL_SEED = 4019
+if __name__ == "__main__":
+    main()
+
+GLOBAL_SEED = 4020
+if __name__ == "__main__":
+    main()
+
+GLOBAL_SEED = 4021
+if __name__ == "__main__":
+    main()
+
+GLOBAL_SEED = 4022
+if __name__ == "__main__":
+    main()
+
+GLOBAL_SEED = 4023
 if __name__ == "__main__":
     main()
 
@@ -434,3 +523,4 @@ if __name__ == "__main__":
 GLOBAL_SEED = 4050
 if __name__ == "__main__":
     main()
+

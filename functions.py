@@ -64,7 +64,7 @@ def plot_scatter_matrix(data: np.ndarray,
         ax.xaxis.set_visible(False)
         ax.yaxis.set_visible(False)
     
-    plt.suptitle('Training Data Scatter Matrix', y=0.92, fontsize=16)
+    
     plt.savefig(save_path, dpi=100, bbox_inches='tight')
     plt.close()
     print(f"Scatter matrix salvata in: {save_path}")
@@ -520,14 +520,6 @@ def kde_est(test_data: np.ndarray,
     est = np.exp(logp)
     return est
 
-
-def kde_est(test_data: np.ndarray, kde_model) -> np.ndarray:
-    """
-    Restituisce densità stimate su test_data usando il modello KDEProduct.
-    """
-    # Riusiamo score_samples
-    return kde_model.score_samples(test_data)
-
 def evaluate_rmse(est_density: np.ndarray, true_density: np.ndarray) :
     rmse = np.sqrt(np.mean((est_density - true_density)**2))
     return rmse
@@ -544,6 +536,13 @@ def evaluate_ise_median(est_density: np.ndarray, true_density: np.ndarray) :
 
 def evaluate_rel_L1(est_density: np.ndarray, true_density: np.ndarray) :
     rel_L1 = np.mean(np.abs(est_density - true_density)/true_density)
+    # 3) salva su CSV
+    df = pd.DataFrame({
+        "est_density": est_density,
+        "true_density": true_density,
+        "weighted_error": rel_L1
+    })
+    df.to_csv('errors.csv', index=False)
     return rel_L1
 
 def evaluate_rel_L1_median(est_density: np.ndarray, true_density: np.ndarray) -> float:
