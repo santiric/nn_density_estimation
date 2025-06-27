@@ -154,6 +154,8 @@ def main():
         temp_data, test_size=10/11, random_state=GLOBAL_SEED
     )
     
+    plot_scatter_matrix(data, save_path='results/training_scatter_matrix_B.png')
+
 
     print(f"Dimensione del set di addestramento: {train_data.shape}")
     print(f"Dimensione del set di validazione: {valid_data.shape}")

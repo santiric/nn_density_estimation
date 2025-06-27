@@ -134,6 +134,8 @@ def main():
     D=5
     sigma = ar1_cor(D, 0.9)
     data = generate_data(N, GLOBAL_SEED, sigma)
+
+    plot_scatter_matrix(data, save_path='results/training_scatter_matrix_A.png')
     
     # Split train/valid/test
     train_data, temp_data = train_test_split(

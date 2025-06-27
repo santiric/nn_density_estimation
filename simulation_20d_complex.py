@@ -54,7 +54,7 @@ def generate_data(N: int,
                               mean: np.ndarray = None) -> np.ndarray:
     """
     Genera N campioni da una normale multivariata con media e matrice di covarianza sigma
-    e applica la trasformazione Y = exp(0.05 * X) elemento per elemento.
+    e applica la trasformazione Y = exp(0.7 * X) elemento per elemento.
 
     Parametri
     ----------
@@ -381,6 +381,10 @@ def main():
         df_results.to_csv(results_path, index=False)
         print(f"Risultati salvati in {results_path}:")
         print(df_results)
+
+
+
+
 
 
 if __name__ == "__main__":

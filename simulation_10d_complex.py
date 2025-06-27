@@ -385,34 +385,5 @@ def main():
 if __name__ == "__main__":
     main()
 
-GLOBAL_SEED = 985
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED = 984
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED = 983
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED = 982
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED = 981
-
-if __name__ == "__main__":
-    main()
-
-GLOBAL_SEED = 980
-
-if __name__ == "__main__":
-    main()
 
 
