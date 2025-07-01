@@ -9,7 +9,7 @@ Questo progetto implementa e confronta quattro metodi di stima della densità:
 Lo studio valuta questi metodi su:
 - **Due distribuzioni di dati**:
   - Scenario A: normale multivariata.
-  - Scenario B: trasformata esponenziale dello scenario A (es. \(Y = \exp(0.7 X)\)).
+  - Scenario B: trasformata esponenziale dello scenario A (es. Y = exp(0.7 X)).
 - **Tre dimensionalità**: 5D, 10D, 20D.
 - **Due dimensioni del dataset**: 5000 e 10000 osservazioni.
 
